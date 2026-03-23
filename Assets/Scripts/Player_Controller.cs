@@ -14,22 +14,46 @@ public class Player_Controller : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float jumpingPower;
 
-    [Header("Grounding")]
-    [SerializeField] LayerMask groundLayer;
-    [SerializeField] Transform groundCheck;
+    public bool isGrounded;
 
-    private float Horizontal;
-
-    private void FixedUpdate()
+    void Start()
     {
-        rb.linearVelocity = new Vector2(Horizontal * speed, rb.linearVelocityY);
+        // Looks for the players Rigidbody
+        rb = GetComponent<Rigidbody2D>();
+        // Referance to find each action
+        moveAction = InputSystem.actions.FindAction("Move");
+        jumpAction = InputSystem.actions.FindAction("Jump");
     }
 
-    public void Move(InputAction.CallbackContext context)
+    void OnEnable()
     {
-        Horizontal = context.ReadValue<Vector2>().x;
+        moveAction.Enable();
+        jumpAction.Enable();
     }
 
+    void OnDisable()
+    {
+        moveAction.Disable();
+        jumpAction.Disable();
+    }
+
+    void Update()
+    {
+        //sends your movment code to the new input system
+        Vector2 moveValue = moveAction.ReadValue<Vector2>();
+        rb.linearVelocity = new Vector2(moveValue.x * speed, rb.linearVelocity.y);
+
+        //checks if jump button is pressed
+        if (jumpAction.triggered && isGrounded == true)   
+        {
+            Jump();
+        }
+    }
+
+    void Jump()
+    {
+        // Adds an Upwards force to the player
+        rb.AddForce(Vector2.up * jumpingPower, ForceMode2D.Impulse); 
+    }
 }
-//moveAction = InputSystem.actions.FindAction("Move");
-//jumpAction = InputSystem.actions.FindAction("Jump");
+
