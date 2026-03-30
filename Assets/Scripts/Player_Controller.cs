@@ -16,6 +16,18 @@ public class Player_Controller : MonoBehaviour
 
     public bool isGrounded;
 
+    [Header("Mantle Mechanic")]
+
+    [SerializeField] Transform ledgeCheck;
+    [SerializeField] Transform headCheck;
+    [SerializeField] float checkDistance = 0.5f;
+    [SerializeField] LayerMask groundLayer;
+    private Vector2 Mantle = new Vector2(0,1);
+
+    bool isTouchingWall;
+    bool isTooTall;
+
+
     void Start()
     {
         // Looks for the players Rigidbody
@@ -39,6 +51,9 @@ public class Player_Controller : MonoBehaviour
 
     void Update()
     {
+
+        
+
         //sends your movment code to the new input system
         Vector2 moveValue = moveAction.ReadValue<Vector2>();
         rb.linearVelocity = new Vector2(moveValue.x * speed, rb.linearVelocity.y);
@@ -48,6 +63,17 @@ public class Player_Controller : MonoBehaviour
         {
             Jump();
         }
+
+        isTouchingWall = !Physics2D.Raycast(ledgeCheck.position, transform.right, checkDistance, groundLayer);
+        Debug.DrawRay(ledgeCheck.position, transform.right, Color.green);
+
+        isTooTall = !Physics2D.Raycast(headCheck.position, transform.right, checkDistance, groundLayer);
+        Debug.DrawRay(headCheck.position, transform.right, Color.green);
+
+        if (!isTouchingWall && isTooTall && !isGrounded && jumpAction.triggered)
+        {
+            StartMantle();
+        }
     }
 
     void Jump()
@@ -55,5 +81,13 @@ public class Player_Controller : MonoBehaviour
         // Adds an Upwards force to the player
         rb.AddForce(Vector2.up * jumpingPower, ForceMode2D.Impulse); 
     }
+
+    void StartMantle()
+    {
+        transform.Translate(Vector2.up * 2);
+        
+    }
+
+  
 }
 
