@@ -14,15 +14,18 @@ public class Player_Controller : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float jumpingPower;
 
+    private float direction = 0.8f;
+    private Vector2 moveinput;
+
     public bool isGrounded;
 
     [Header("Mantle Mechanic")]
 
-    [SerializeField] Transform ledgeCheck;
+    [SerializeField] Transform wallCheck;
     [SerializeField] Transform headCheck;
     [SerializeField] float checkDistance = 0.5f;
     [SerializeField] LayerMask groundLayer;
-    private Vector2 Mantle = new Vector2(0,1);
+
 
     bool isTouchingWall;
     bool isTooTall;
@@ -30,8 +33,6 @@ public class Player_Controller : MonoBehaviour
 
     void Start()
     {
-        // Looks for the players Rigidbody
-        rb = GetComponent<Rigidbody2D>();
         // Referance to find each action
         moveAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
@@ -49,31 +50,49 @@ public class Player_Controller : MonoBehaviour
         jumpAction.Disable();
     }
 
+
     void Update()
     {
-
-        
-
+        Flip();
+         
         //sends your movment code to the new input system
         Vector2 moveValue = moveAction.ReadValue<Vector2>();
         rb.linearVelocity = new Vector2(moveValue.x * speed, rb.linearVelocity.y);
 
         //checks if jump button is pressed
-        if (jumpAction.triggered && isGrounded == true)   
+        if (jumpAction.triggered && isGrounded == true)
         {
             Jump();
         }
 
-        isTouchingWall = !Physics2D.Raycast(ledgeCheck.position, transform.right, checkDistance, groundLayer);
-        Debug.DrawRay(ledgeCheck.position, transform.right, Color.green);
+        if(Input.GetKeyDown(KeyCode.D))
+        {
+            direction = .8f;
 
-        isTooTall = !Physics2D.Raycast(headCheck.position, transform.right, checkDistance, groundLayer);
-        Debug.DrawRay(headCheck.position, transform.right, Color.green);
+            isTouchingWall = Physics2D.Raycast(wallCheck.position, transform.right, checkDistance, groundLayer);
+            Debug.DrawRay(wallCheck.position, transform.right, Color.green);
 
-        if (!isTouchingWall && isTooTall && !isGrounded && jumpAction.triggered)
+            isTooTall = Physics2D.Raycast(headCheck.position, transform.right, checkDistance, groundLayer);
+            Debug.DrawRay(headCheck.position, transform.right, Color.green);
+
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            direction = -.8f;
+
+            isTouchingWall = Physics2D.Raycast(wallCheck.position, transform.right, checkDistance, groundLayer);
+            Debug.DrawRay(wallCheck.position, -transform.right, Color.green);
+
+            isTooTall = Physics2D.Raycast(headCheck.position, transform.right, checkDistance, groundLayer);
+            Debug.DrawRay(headCheck.position, -transform.right, Color.green);
+        }
+
+        if (isTouchingWall && !isTooTall && !isGrounded && jumpAction.triggered)
         {
             StartMantle();
         }
+
+
     }
 
     void Jump()
@@ -88,6 +107,19 @@ public class Player_Controller : MonoBehaviour
         
     }
 
-  
+    void Flip()
+    {
+        if(Input.GetKeyDown(KeyCode.D))
+        {
+            direction = .8f;
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            direction = -.8f;
+        }
+
+        transform.localScale = new Vector3(direction, 2, 1);
+    }
+
 }
 
