@@ -3,15 +3,15 @@ using UnityEngine.SceneManagement;
 
 public class Game_Manager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void StartButton()
     {
-        
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Level_3");
+    }
+    public void RestartButton()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Start_Level");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-      
-    }
 }
