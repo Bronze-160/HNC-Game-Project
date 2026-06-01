@@ -11,6 +11,7 @@ public class Player_Controller : MonoBehaviour
     InputAction jumpAction;
     InputAction grappleAction;
     InputAction attackAction;
+    InputAction doubleJumpAction; // Ross
 
     private Scene activeScene; // Stores the Active Scene
     [SerializeField] string nextScene = "Death"; // Stores what the next scene will be and can be changed
@@ -27,6 +28,7 @@ public class Player_Controller : MonoBehaviour
     [SerializeField] float speed; // Stores players Speed 
     [SerializeField] float jumpingPower;// Stores players Jump Power
     [SerializeField] Vector3 playerScale; // Stores the players scale
+    [SerializeField] int jumpCount = 1;
 
     public Vector2 moveValue;
 
@@ -65,6 +67,9 @@ public class Player_Controller : MonoBehaviour
 
     void Start()
     {
+
+
+        Time.timeScale = 1f;
         activeScene = SceneManager.GetActiveScene();
         Debug.Log("Active Scene is '" + activeScene.name + "'."); // Tells Console What the Active Scene Is called
 
@@ -77,17 +82,19 @@ public class Player_Controller : MonoBehaviour
         jumpAction = InputSystem.actions.FindAction("Jump");
         grappleAction = InputSystem.actions.FindAction("Grapple");
         attackAction = InputSystem.actions.FindAction("Attack");
+        doubleJumpAction = InputSystem.actions.FindAction("DJump");
         //EditorApplication.isPaused = false;
     }
 
-
+    /*
     // makes sure Inputs don't Break //
     void OnEnable()
     {
         moveAction.Enable();
         jumpAction.Enable();
         grappleAction.Enable();
-        attackAction.Enable();  
+        attackAction.Enable();
+        doubleJumpAction.Enable();
     }
 
     void OnDisable()
@@ -96,16 +103,16 @@ public class Player_Controller : MonoBehaviour
         jumpAction.Disable();
         grappleAction.Disable();
         attackAction.Disable();
+        doubleJumpAction.Disable();
     }
     // //
-
+    */
     void Update()
     {
         if (attackAction.triggered)
         {
             animator.SetBool(isAttacking, true); // Attack Animation Play's 
         }
-
         if (moveValue.x >= 1 || moveValue.x <= -1) // Checks if player is moving 
         {
             animator.SetBool(isRunning, true);// Run Animation Play's
@@ -125,6 +132,12 @@ public class Player_Controller : MonoBehaviour
             animator.SetTrigger("Jump"); // Jump Animation Play's
             Jump(); // Makes player Jump
         }
+
+        if (!isGrounded && !onPlatfrom && jumpAction.triggered && jumpCount == 1)
+        {
+            DJump();
+        }
+
 
         if (isGrounded == true || onPlatfrom == true)
         {
@@ -217,8 +230,16 @@ public class Player_Controller : MonoBehaviour
         // End the scene When triggering the object with this tag -- Finlay Macmillan
         if (other.gameObject.CompareTag("End"))
         {
-            SceneManager.LoadScene(nextScene);
+            Time.timeScale = 1f;
+            SceneManager.LoadSceneAsync(nextScene); 
         }
+
+        if (other.gameObject.CompareTag("Next"))
+        {
+            Time.timeScale = 1f;
+            SceneManager.LoadSceneAsync("Level_3"); 
+        }
+
 
         if ((other.gameObject.CompareTag("EnemyDeath"))) // Destroys the enemy if in a death zone 
         {
@@ -242,7 +263,14 @@ public class Player_Controller : MonoBehaviour
     void Jump() // Pushes the player with Force -- Finlay Macmillan
     {
         // Adds an Upwards force to the player
-        rb.AddForce(Vector2.up * jumpingPower, ForceMode2D.Impulse); 
+        rb.AddForce(Vector2.up * jumpingPower, ForceMode2D.Impulse);
+        jumpCount = 1; // Ross
+    }
+
+    void DJump() // Ross
+    {
+        rb.AddForce(Vector2.up * jumpingPower, ForceMode2D.Impulse);
+        jumpCount = 0;
     }
 
     void StartMantle() // Pushes the player up -- Finlay Macmillan

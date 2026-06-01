@@ -6,12 +6,14 @@ public class Game_Manager : MonoBehaviour
     public void StartButton()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Level_3");
+        // SceneManager.LoadScene("Level_1");
+        SceneManager.LoadSceneAsync("Level_1");
     }
     public void RestartButton()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Start_Level");
+        Debug.Log("Restart");
+        SceneManager.LoadSceneAsync("Start_Level");
     }
 
 }
