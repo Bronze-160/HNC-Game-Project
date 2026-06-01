@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - EnemyDeath
   - End
+  - Next
   layers:
   - Default
   - TransparentFX
