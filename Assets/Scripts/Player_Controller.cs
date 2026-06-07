@@ -20,6 +20,7 @@ public class Player_Controller : MonoBehaviour
     [Header("Other Scripts")] // Referance to other Script
     public CameraChanger cameraChanger;
     public Player_Stats playerStats; // references to PlayerStats script
+    public Level_Loading levelLoading;
 
     [Header("Player Component Refrences")]
     [SerializeField] Rigidbody2D rb;
@@ -230,14 +231,12 @@ public class Player_Controller : MonoBehaviour
         // End the scene When triggering the object with this tag -- Finlay Macmillan
         if (other.gameObject.CompareTag("End"))
         {
-            Time.timeScale = 1f;
-            SceneManager.LoadSceneAsync(nextScene); 
+            levelLoading.LoadLevel(3);
         }
 
         if (other.gameObject.CompareTag("Next"))
         {
-            Time.timeScale = 1f;
-            SceneManager.LoadSceneAsync("Level_3"); 
+            levelLoading.LoadLevel(2);
         }
 
 
