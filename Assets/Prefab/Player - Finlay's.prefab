@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 1962057991312433526}
   - component: {fileID: 5738964204968168702}
   - component: {fileID: 4474781212781874764}
+  - component: {fileID: 8873083533601569462}
   - component: {fileID: 1018200332805924643}
   - component: {fileID: 192823207867081166}
   - component: {fileID: 520373847515899401}
@@ -153,6 +154,52 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!61 &8873083533601569462
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5571036202205117368}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.47596312, y: -0.10983755}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3, y: 2.625}
+    newSize: {x: 3, y: 2.625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.282042, y: 0.736338}
+  m_EdgeRadius: 0
 --- !u!70 &1018200332805924643
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -226,7 +273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_Controller: {fileID: 7735900880301626644}
   maxHealth: 100
-  currentHealth: 0
+  currentHealth: 100
   healthBar: {fileID: 0}
 --- !u!114 &7735900880301626644
 MonoBehaviour:
@@ -240,25 +287,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eca039c4c2580c4b9cecec1fc9d36d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextScene: Death
   cameraChanger: {fileID: 0}
+  playerStats: {fileID: 520373847515899401}
+  levelLoading: {fileID: 0}
+  enemyStats: {fileID: 0}
   rb: {fileID: 4474781212781874764}
+  attackDamage: 15
   speed: 8
   jumpingPower: 15
   playerScale: {x: 0, y: 0, z: 0}
+  jumpCount: 1
   moveValue: {x: 0, y: 0}
   isGrounded: 0
   onPlatfrom: 0
   isRunning: isRunning
   isJumping: isJumping
   isAttacking: isAttacking
+  isHit: isHit
   wallCheck: {fileID: 7825594171439385878}
   headCheck: {fileID: 5311717801880050863}
   checkDistance: 0.5
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  mantlePower: 2
   slideSpeed: 12
-  slideDuration: 0.4
+  slideDuration: 5
 --- !u!1 &6762063411751509035
 GameObject:
   m_ObjectHideFlags: 0

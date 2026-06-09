@@ -29,11 +29,6 @@ public class Player_Stats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyUp(KeyCode.Z)) // Test //
-        {
-            TakeDamage(20);
-        }
-
         if(currentHealth <= 0) // If player's health is 0 then the player dies
         {
             SceneManager.LoadScene("Death");

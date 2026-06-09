@@ -2584,21 +2584,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eca039c4c2580c4b9cecec1fc9d36d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: Death
   cameraChanger: {fileID: 0}
   playerStats: {fileID: 5962581874230601524}
   levelLoading: {fileID: 1425526080}
+  enemyStats: {fileID: 0}
+  enemyFollow: {fileID: 0}
   rb: {fileID: 7754767634554457969}
+  attackDamage: 15
   speed: 8
   jumpingPower: 15
   playerScale: {x: 0, y: 0, z: 0}
   jumpCount: 1
+  animator: {fileID: 6281094803169632499}
   moveValue: {x: 0, y: 0}
   isGrounded: 0
   onPlatfrom: 0
+  enemyAnimator: {fileID: 0}
+  enemyRb: {fileID: 0}
+  hitForce: 5
   isRunning: 
   isJumping: 
   isAttacking: isAttacking
+  isHit: isHit
   wallCheck: {fileID: 4115724574076111915}
   headCheck: {fileID: 2031377337492823442}
   checkDistance: 0.5

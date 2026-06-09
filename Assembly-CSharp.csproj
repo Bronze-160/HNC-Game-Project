@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Spike_Enemy.cs" />
     <Compile Include="Assets\Scripts\Player_Controller.cs" />
+    <Compile Include="Assets\Scripts\Level 3\Enemy_Stats.cs" />
     <Compile Include="Assets\Scripts\Health_Bar.cs" />
     <Compile Include="Assets\Scripts\Game_Manager.cs" />
     <Compile Include="Assets\Scripts\Level 3\Enemy_Follow.cs" />

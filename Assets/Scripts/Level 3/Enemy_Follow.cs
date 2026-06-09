@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy_Follow : MonoBehaviour
@@ -11,12 +12,20 @@ public class Enemy_Follow : MonoBehaviour
     [Header("Other Scripts")]
     public CameraChanger cameraChanger; // references to CameraChanger script
     public Player_Stats playerStats; // references to PlayerStats script
+    public Player_Controller playerController; // references to PlayerController script
+
+    public Animator playerAnimator;
+    public Rigidbody2D playerRb;
+    [SerializeField] int hitForce = 5;
+
+   
 
     [Header("Enemy Stats")]
     public int health = 10; // equals how much health the Enemy has
     [SerializeField] int enemyDamage = 10; // How much damage the enemy does to the player
-    [SerializeField] int coolDown = 1; // Cooldown on when the enemy can swing
     private bool canAttack = true; // check if the enemy can attack
+    [SerializeField] float coolDown = 2; // Cooldown on when the enemy can swing
+    private float timer;
 
     [Header("Tracking Target settings")]
     [SerializeField] float speed = 5f; // How fast the Enemy to move towards the target
@@ -27,14 +36,16 @@ public class Enemy_Follow : MonoBehaviour
     private int playerRoom; // equals what room the player is in
     private bool shouldmove = false; // checks if the Enemy should move
     private float targetX; // holds the Enemy's x position
+    private float direction;
 
     private bool inRange = false;// Checks to see if player is in range of enemy to attack
 
     [SerializeField] Animator animator; // links the script to the Unity animator
     [SerializeField] string isAttacking = "isAttacking"; // Peramitor if player is Attacking 
     [SerializeField] string isRunning = "isRunning"; // Peramitor if player is mRunning 
+    public string enemyIsHit = "isHit";// Peramitor if enemy is Hit 
 
-     
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -60,7 +71,7 @@ public class Enemy_Follow : MonoBehaviour
         }
 
         // Mathf.Sign checks what side the enemy is on to the player
-        float direction = Mathf.Sign(transform.position.x - target.position.x);
+        direction = Mathf.Sign(transform.position.x - target.position.x);
         Vector3 enemyScale = new Vector3(-direction, transform.localScale.y, transform.localScale.z); // sets what way the enemy should face
         transform.localScale = enemyScale; // Flips the enemy depending where the player is (Left or Right Side) 
         float dynamicOffset = offset * direction; // this makes sure that the enemy is running to the correct side of the player         
@@ -78,11 +89,19 @@ public class Enemy_Follow : MonoBehaviour
             animator.SetBool(isRunning, false); // Keeps the enemy idle when blending between cameras (Switching)
         }
 
+        if(timer > 0)
+        {
+            timer -= Time.deltaTime;
+        }
+
 
         if (inRange == true && canAttack == true && !cameraChanger.CinemachineBrain.IsBlending)
         {
-            Attacking(); // Starts the attack function if player is in range, if the enemy is able to attack and the camera is not blending (Switching)
-
+            if (timer <= 0)
+            {
+                Attacking(); // Starts the attack function if player is in range, if the enemy is able to attack and the camera is not blending (Switching)
+                timer = coolDown;
+            }
         }
 
         if (inRange)
@@ -116,33 +135,32 @@ public class Enemy_Follow : MonoBehaviour
 
     void Attacking() //stops running and starts the attack animation
     {
+        shouldmove = false;
         animator.SetBool(isRunning, false);
         canAttack = false;
         animator.SetBool(isAttacking, true);
     }
 
-    void FinishAttacking() // if finished the player will take damage, Then the enemy stops attacking. This gives the enemy a cooldown
+    void EnemyAttackHit() // if hit the player will take damage, Then the enemy stops attacking. This gives the enemy a cooldown
     {
         playerStats.TakeDamage(enemyDamage);
-        animator.SetBool(isAttacking, false);
+        playerAnimator.SetBool(playerController.isHit, true);
 
-        if (inRange == true) // keeps attacking (animation loops)
-        {
-            StartCoroutine(AttackCooldown());
+        if (direction < 0)
+        {      
+            playerRb.AddForce(transform.right * hitForce);
         }
-        else
+        else if (direction > 0)
         {
-            canAttack = false; // stop attacking
+            playerRb.AddForce(-transform.right * hitForce);
         }
-        
+        shouldmove = false;
     }
 
-    IEnumerator AttackCooldown() // waits untill the cooldown time
+    void FinishAttacking() // if finished the player will take damage, Then the enemy stops attacking. This gives the enemy a cooldown
     {
-        yield return new WaitForSeconds(coolDown);
-        Debug.Log(coolDown);
-        canAttack = true;
+        animator.SetBool(isAttacking, false);
+        shouldmove = true;
     }
 
-   
 }

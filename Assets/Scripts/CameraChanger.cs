@@ -36,6 +36,7 @@ public class CameraChanger : MonoBehaviour
     {
         currentCamera = cameraStart; // Makes sure that the start camera starts first
         cameraStart.Priority = 20; // Priority means the higher it is thats what camera you see from
+        camera_1.Priority = 10;
 
         for (int i = 0; i < cameras.Length; i++) // Goes through every camera, making the current camera the priority
         {
