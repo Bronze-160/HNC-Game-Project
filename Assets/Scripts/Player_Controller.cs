@@ -14,8 +14,6 @@ public class Player_Controller : MonoBehaviour
     InputAction doubleJumpAction; // Ross
 
     private Scene activeScene; // Stores the Active Scene
- // [SerializeField] string nextScene = "Death"; // Stores what the next scene will be and can be changed
-
 
     [Header("Other Scripts")] // Referance to other Script
     public CameraChanger cameraChanger;
@@ -74,6 +72,10 @@ public class Player_Controller : MonoBehaviour
     public float slideDuration = 0.4f;
     private bool isSliding;
 
+    [Header("Audio")]
+    [SerializeField] AudioClip swordWoosh;
+
+    //[SerializeField] AudioClip swordHit;
 
     IEnumerator Start()
     {
@@ -89,7 +91,6 @@ public class Player_Controller : MonoBehaviour
         grappleAction = InputSystem.actions.FindAction("Grapple");
         attackAction = InputSystem.actions.FindAction("Attack");
         doubleJumpAction = InputSystem.actions.FindAction("DJump");
-        //EditorApplication.isPaused = false;
 
         if (activeScene.name == "Level_3") // -- Finlay Macmillan
         {
@@ -109,29 +110,10 @@ public class Player_Controller : MonoBehaviour
         }
     }
 
-    /*
-    // makes sure Inputs don't Break //
-    void OnEnable()
-    {
-        moveAction.Enable();
-        jumpAction.Enable();
-        grappleAction.Enable();
-        attackAction.Enable();
-        doubleJumpAction.Enable();
-    }
-
-    void OnDisable()
-    {
-        moveAction.Disable();
-        jumpAction.Disable();
-        grappleAction.Disable();
-        attackAction.Disable();
-        doubleJumpAction.Disable();
-    }
-    // //
-    */
     void Update()
     {
+        
+
         if (attackAction.triggered)
         {
             Attack();
@@ -207,8 +189,6 @@ public class Player_Controller : MonoBehaviour
         {
             StartCoroutine(Slide());
         }
-
-
 
     }
     void OnTriggerEnter2D(Collider2D other)
@@ -339,11 +319,25 @@ public class Player_Controller : MonoBehaviour
 
         Collider2D[] hits = Physics2D.OverlapCircleAll(attackPoint.position, radius);
         Debug.Log("hit");
-        
+
+        Debug.Log(hits.Length);
+        if (hits.Length <= 2)
+        {
+            AudioSource.PlayClipAtPoint(swordWoosh, transform.position, 1f);
+            Debug.Log("Played");
+        }
+
         foreach (var hit in hits)
         {
+          
+
             hit.GetComponent<Enemy_Stats>()?.EnemyTakeDamage(attackDamage);
             Rigidbody2D enemyRb = hit.GetComponent<Rigidbody2D>();
+            Animator enemyAnimator = hit.GetComponent<Animator>();
+            string isHit = hit.GetComponent<Enemy_Follow>()?.enemyIsHit;
+
+            enemyAnimator.SetBool(isHit, true);
+            
 
             if (enemyRb != null)
             {

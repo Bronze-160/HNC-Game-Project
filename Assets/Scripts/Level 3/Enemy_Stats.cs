@@ -16,11 +16,14 @@ public class Enemy_Stats : MonoBehaviour
 
     //public Health_Bar healthBar; // refrenace to the Health UI
 
+    [SerializeField] AudioClip swordHit;
+    [SerializeField] AudioClip death;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         enemyCurrentHealth = enemymaxHealth;
-        //healthBar.SetMaxHealth(enemymaxHealth); // sets the UI to the max Health
+
     }
 
     // Update is called once per frame
@@ -28,7 +31,9 @@ public class Enemy_Stats : MonoBehaviour
     {
         if (enemyCurrentHealth <= 0) // If player's health is 0 then the player dies
         {
+            AudioSource.PlayClipAtPoint(death, transform.position, .6f);
             Destroy(gameObject);
+            
         }
     }
 
@@ -36,6 +41,7 @@ public class Enemy_Stats : MonoBehaviour
     {
         enemyCurrentHealth -= damage;
         Debug.Log(enemyCurrentHealth);
+        AudioSource.PlayClipAtPoint(swordHit, transform.position, 1f);
     }
 
 

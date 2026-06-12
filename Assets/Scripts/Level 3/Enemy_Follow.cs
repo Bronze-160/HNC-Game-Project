@@ -18,7 +18,7 @@ public class Enemy_Follow : MonoBehaviour
     public Rigidbody2D playerRb;
     [SerializeField] int hitForce = 5;
 
-   
+
 
     [Header("Enemy Stats")]
     public int health = 10; // equals how much health the Enemy has
@@ -89,7 +89,7 @@ public class Enemy_Follow : MonoBehaviour
             animator.SetBool(isRunning, false); // Keeps the enemy idle when blending between cameras (Switching)
         }
 
-        if(timer > 0)
+        if (timer > 0)
         {
             timer -= Time.deltaTime;
         }
@@ -113,9 +113,9 @@ public class Enemy_Follow : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Player")) // If the player is in the trigger zone, then they are in range
+        if (other.gameObject.CompareTag("Player")) // If the player is in the trigger zone, then they are in range
         {
-           inRange = true;
+            inRange = true;
         }
     }
     void OnTriggerExit2D(Collider2D other) // If the player leaves the trigger zone, then they are not in range
@@ -147,7 +147,7 @@ public class Enemy_Follow : MonoBehaviour
         playerAnimator.SetBool(playerController.isHit, true);
 
         if (direction < 0)
-        {      
+        {
             playerRb.AddForce(transform.right * hitForce);
         }
         else if (direction > 0)
@@ -161,6 +161,12 @@ public class Enemy_Follow : MonoBehaviour
     {
         animator.SetBool(isAttacking, false);
         shouldmove = true;
+    }
+
+
+    void EndOfHit()
+    {
+        animator.SetBool(enemyIsHit, false);
     }
 
 }

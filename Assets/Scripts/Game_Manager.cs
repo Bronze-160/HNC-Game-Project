@@ -16,4 +16,9 @@ public class Game_Manager : MonoBehaviour
         SceneManager.LoadSceneAsync("Start_Level");
     }
 
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
 }

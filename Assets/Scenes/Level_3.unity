@@ -856,6 +856,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Follow_Enemy_Finlay (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: death
+      value: 
+      objectReference: {fileID: 8300000, guid: 02fb3c0c25c710d45bfe7e9d8ab5f75d, type: 3}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: swordHit
+      value: 
+      objectReference: {fileID: 8300000, guid: b0ab481c686173b448d9e0c2945c3564, type: 3}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: enemyCurrentHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5279347521425541736, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.18
@@ -917,6 +929,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7296199446963805791, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: enemyIsHit
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296199446963805791, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: playerStats
       value: 
       objectReference: {fileID: 254502006}
@@ -951,6 +967,18 @@ PrefabInstance:
     - target: {fileID: 2530228666550732046, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: m_Name
       value: Follow_Enemy_Finlay (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: death
+      value: 
+      objectReference: {fileID: 8300000, guid: 02fb3c0c25c710d45bfe7e9d8ab5f75d, type: 3}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: swordHit
+      value: 
+      objectReference: {fileID: 8300000, guid: b0ab481c686173b448d9e0c2945c3564, type: 3}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: enemyCurrentHealth
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5279347521425541736, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1011,6 +1039,10 @@ PrefabInstance:
     - target: {fileID: 7296199446963805791, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: enemyRoom
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296199446963805791, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: enemyIsHit
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7296199446963805791, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: playerStats
@@ -1833,6 +1865,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Follow_Enemy_Finlay (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: death
+      value: 
+      objectReference: {fileID: 8300000, guid: 02fb3c0c25c710d45bfe7e9d8ab5f75d, type: 3}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: swordHit
+      value: 
+      objectReference: {fileID: 8300000, guid: b0ab481c686173b448d9e0c2945c3564, type: 3}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: enemyCurrentHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5279347521425541736, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.27
@@ -1892,6 +1936,10 @@ PrefabInstance:
     - target: {fileID: 7296199446963805791, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: enemyRoom
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296199446963805791, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: enemyIsHit
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7296199446963805791, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: playerStats
@@ -2561,6 +2609,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Follow_Enemy_Finlay (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: death
+      value: 
+      objectReference: {fileID: 8300000, guid: 02fb3c0c25c710d45bfe7e9d8ab5f75d, type: 3}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: swordHit
+      value: 
+      objectReference: {fileID: 8300000, guid: b0ab481c686173b448d9e0c2945c3564, type: 3}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: enemyCurrentHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5279347521425541736, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.38
@@ -2622,6 +2682,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7296199446963805791, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: enemyIsHit
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296199446963805791, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: playerStats
       value: 
       objectReference: {fileID: 254502006}
@@ -2664,6 +2728,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemymaxHealth: 100
   enemyCurrentHealth: 0
+  swordHit: {fileID: 0}
+  death: {fileID: 0}
 --- !u!4 &474030190 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5279347521425541736, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
@@ -2683,6 +2749,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemymaxHealth: 100
   enemyCurrentHealth: 0
+  swordHit: {fileID: 0}
+  death: {fileID: 0}
 --- !u!1 &474963677
 GameObject:
   m_ObjectHideFlags: 0
@@ -5322,6 +5390,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemymaxHealth: 100
   enemyCurrentHealth: 0
+  swordHit: {fileID: 0}
+  death: {fileID: 0}
 --- !u!1001 &932204200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5333,6 +5403,18 @@ PrefabInstance:
     - target: {fileID: 2530228666550732046, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: m_Name
       value: Follow_Enemy_Finlay (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: death
+      value: 
+      objectReference: {fileID: 8300000, guid: 02fb3c0c25c710d45bfe7e9d8ab5f75d, type: 3}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: swordHit
+      value: 
+      objectReference: {fileID: 8300000, guid: b0ab481c686173b448d9e0c2945c3564, type: 3}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: enemyCurrentHealth
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5279347521425541736, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5393,6 +5475,10 @@ PrefabInstance:
     - target: {fileID: 7296199446963805791, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: enemyRoom
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296199446963805791, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: enemyIsHit
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7296199446963805791, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: playerStats
@@ -5748,6 +5834,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemymaxHealth: 100
   enemyCurrentHealth: 0
+  swordHit: {fileID: 0}
+  death: {fileID: 0}
 --- !u!4 &999495750 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5279347521425541736, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
@@ -5767,6 +5855,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemymaxHealth: 100
   enemyCurrentHealth: 0
+  swordHit: {fileID: 0}
+  death: {fileID: 0}
 --- !u!4 &1004357106 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5279347521425541736, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
@@ -5786,6 +5876,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemymaxHealth: 100
   enemyCurrentHealth: 0
+  swordHit: {fileID: 0}
+  death: {fileID: 0}
 --- !u!1 &1004776524
 GameObject:
   m_ObjectHideFlags: 0
@@ -5866,6 +5958,135 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6150164684244953507, guid: 80dc371a7dafea9409fae9388635d284, type: 3}
   m_PrefabInstance: {fileID: 1614616460}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1018304490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1018304492}
+  - component: {fileID: 1018304491}
+  m_Layer: 0
+  m_Name: BackGround Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1018304491
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018304490}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 98007285b8482094faa136ebc515c51d, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.3
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1018304492
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018304490}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.376426, y: 4.046053, z: -0.13205886}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1039799992
 GameObject:
   m_ObjectHideFlags: 0
@@ -5962,6 +6183,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Follow_Enemy_Finlay (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: death
+      value: 
+      objectReference: {fileID: 8300000, guid: 02fb3c0c25c710d45bfe7e9d8ab5f75d, type: 3}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: swordHit
+      value: 
+      objectReference: {fileID: 8300000, guid: b0ab481c686173b448d9e0c2945c3564, type: 3}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: enemyCurrentHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5279347521425541736, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 39.26
@@ -6021,6 +6254,10 @@ PrefabInstance:
     - target: {fileID: 7296199446963805791, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: enemyRoom
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296199446963805791, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: enemyIsHit
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7296199446963805791, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: playerStats
@@ -42171,6 +42408,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemymaxHealth: 100
   enemyCurrentHealth: 0
+  swordHit: {fileID: 0}
+  death: {fileID: 0}
 --- !u!1 &1452524619
 GameObject:
   m_ObjectHideFlags: 0
@@ -42588,6 +42827,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Follow_Enemy_Finlay (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: death
+      value: 
+      objectReference: {fileID: 8300000, guid: 02fb3c0c25c710d45bfe7e9d8ab5f75d, type: 3}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: swordHit
+      value: 
+      objectReference: {fileID: 8300000, guid: b0ab481c686173b448d9e0c2945c3564, type: 3}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: enemyCurrentHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5279347521425541736, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 33.7
@@ -42649,6 +42900,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7296199446963805791, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: enemyIsHit
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296199446963805791, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: playerStats
       value: 
       objectReference: {fileID: 254502006}
@@ -42683,6 +42938,18 @@ PrefabInstance:
     - target: {fileID: 2530228666550732046, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: m_Name
       value: Follow_Enemy_Finlay (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: death
+      value: 
+      objectReference: {fileID: 8300000, guid: 02fb3c0c25c710d45bfe7e9d8ab5f75d, type: 3}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: swordHit
+      value: 
+      objectReference: {fileID: 8300000, guid: b0ab481c686173b448d9e0c2945c3564, type: 3}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: enemyCurrentHealth
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5279347521425541736, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -42743,6 +43010,10 @@ PrefabInstance:
     - target: {fileID: 7296199446963805791, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: enemyRoom
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296199446963805791, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: enemyIsHit
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7296199446963805791, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: playerStats
@@ -42844,6 +43115,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemymaxHealth: 100
   enemyCurrentHealth: 0
+  swordHit: {fileID: 0}
+  death: {fileID: 0}
 --- !u!4 &1606387235 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6150164684244953507, guid: 80dc371a7dafea9409fae9388635d284, type: 3}
@@ -44102,6 +44375,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemymaxHealth: 100
   enemyCurrentHealth: 0
+  swordHit: {fileID: 0}
+  death: {fileID: 0}
 --- !u!1 &2062127884
 GameObject:
   m_ObjectHideFlags: 0
@@ -44189,6 +44464,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Follow_Enemy_Finlay (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: death
+      value: 
+      objectReference: {fileID: 8300000, guid: 02fb3c0c25c710d45bfe7e9d8ab5f75d, type: 3}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: swordHit
+      value: 
+      objectReference: {fileID: 8300000, guid: b0ab481c686173b448d9e0c2945c3564, type: 3}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: enemyCurrentHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5279347521425541736, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -17.69
@@ -44248,6 +44535,10 @@ PrefabInstance:
     - target: {fileID: 7296199446963805791, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: enemyRoom
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296199446963805791, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: enemyIsHit
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7296199446963805791, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: playerStats
@@ -44478,6 +44769,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Follow_Enemy_Finlay
       objectReference: {fileID: 0}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: death
+      value: 
+      objectReference: {fileID: 8300000, guid: 02fb3c0c25c710d45bfe7e9d8ab5f75d, type: 3}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: swordHit
+      value: 
+      objectReference: {fileID: 8300000, guid: b0ab481c686173b448d9e0c2945c3564, type: 3}
+    - target: {fileID: 3285716844933486522, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: enemyCurrentHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5279347521425541736, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.1246676
@@ -44527,6 +44830,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 835371587}
     - target: {fileID: 7296199446963805791, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
+      propertyPath: enemyIsHit
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296199446963805791, guid: af17c2d983a9a5f4597861451be1d3cc, type: 3}
       propertyPath: playerStats
       value: 
       objectReference: {fileID: 254502006}
@@ -44555,6 +44862,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 520373847515899401, guid: 891ba908de0048d43b53cd1c27f80717, type: 3}
+      propertyPath: death
+      value: 
+      objectReference: {fileID: 8300000, guid: 02fb3c0c25c710d45bfe7e9d8ab5f75d, type: 3}
+    - target: {fileID: 520373847515899401, guid: 891ba908de0048d43b53cd1c27f80717, type: 3}
+      propertyPath: swordHit
+      value: 
+      objectReference: {fileID: 8300000, guid: 266e85e6fe7e4c64d8eabf2e35f6e11e, type: 3}
     - target: {fileID: 520373847515899401, guid: 891ba908de0048d43b53cd1c27f80717, type: 3}
       propertyPath: healthBar
       value: 
@@ -44632,6 +44947,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 766454797}
     - target: {fileID: 7735900880301626644, guid: 891ba908de0048d43b53cd1c27f80717, type: 3}
+      propertyPath: swordWoosh
+      value: 
+      objectReference: {fileID: 8300000, guid: 33bbc89e54764b94abfa0a0bc6620ea6, type: 3}
+    - target: {fileID: 7735900880301626644, guid: 891ba908de0048d43b53cd1c27f80717, type: 3}
       propertyPath: AttackPoint
       value: 
       objectReference: {fileID: 934573812}
@@ -44689,3 +45008,4 @@ SceneRoots:
   - {fileID: 91369861}
   - {fileID: 1393126793}
   - {fileID: 346206176}
+  - {fileID: 1018304492}

@@ -19,6 +19,10 @@ public class Player_Stats : MonoBehaviour
 
     public Health_Bar healthBar; // refrenace to the Health UI
 
+    [Header("Audio")]
+    [SerializeField] AudioClip swordHit;
+    [SerializeField] AudioClip death;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,14 +36,18 @@ public class Player_Stats : MonoBehaviour
         if(currentHealth <= 0) // If player's health is 0 then the player dies
         {
             SceneManager.LoadScene("Death");
+            AudioSource.PlayClipAtPoint(death, transform.position, .3f);
+
         }
     }
 
     public void TakeDamage(int damage) // Function so when called will inflict damage 
     {
-        currentHealth -= damage; 
-
+        currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+        AudioSource.PlayClipAtPoint(swordHit, transform.position, 1f);
+        
+        
     }
 
     
